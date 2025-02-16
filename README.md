@@ -1,8 +1,17 @@
-# React + Vite
+**Project Name: Unsplash Photo Gallery**
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project fetches and displays photos from Unsplash using their public API. It allows users to search for photos based on a keyword and view the results in a gallery format. The theme of the app toggles between light and dark modes based on the user's preference.
 
-Currently, two official plugins are available:
+**Features**
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Searchable Photo Gallery: Search for images by keywords.
+- Dark/Light Theme Toggle: Switch between light and dark themes, based on the system's preference or user choice.
+- Fetch Data from Unsplash API: Display images fetched from the Unsplash API.
+
+**Technologies Used**
+
+- React for building the UI.
+- React Query for data fetching and caching from the Unsplash API.
+- Axios for making HTTP requests to the Unsplash API.
+- CSS Variables for theming and styling.
+- Vite for fast development and building.
