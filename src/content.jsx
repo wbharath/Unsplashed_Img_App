@@ -6,8 +6,13 @@ export const AppProvider = ({children})=>{
     //This one tell us whether the system has dark mode or not
     const getInitialDarkMode = ()=>{
         const prefersDarkMode = window.matchMedia('(prefers-color-scheme:dark)').matches
-        console.log(prefersDarkMode)
-        return prefersDarkMode
+        
+        // console.log(localStorage.getItem('darkTheme'))
+        //extra layer of flexibility--> user can control the theme even after refreshing
+        const storedDarkMode = localStorage.getItem('darkTheme') === 'true'
+        // console.log(prefersDarkMode)
+        // return prefersDarkMode
+        return storedDarkMode || prefersDarkMode
     }
   const [isDarkTheme, setIsDarkTheme] = useState(getInitialDarkMode())
   const [searchTerm, setSearchTerm] = useState('cat')
@@ -19,6 +24,7 @@ export const AppProvider = ({children})=>{
     // const body = document.querySelector('body')
     // // console.log(body)
     // body.classList.toggle('dark-theme', newDarkTheme)
+    localStorage.setItem('darkTheme', newDarkTheme)
   }
 
 //   ensures that it updates the state of isDarktheme and then run the useeffect where as in above 
